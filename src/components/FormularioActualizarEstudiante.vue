@@ -1,7 +1,7 @@
 <template>
     <div class="form-container">
       <h2>Buscar y Actualizar Estudiante</h2>
-      <form @submit.prevent="buscarEstudiante">
+      <form @submit.prevent="consultar">
         <div class="form-group">
           <label for="cedula">Cédula:</label>
           <input type="text" id="cedula" v-model="cedula" required />
@@ -10,7 +10,7 @@
       </form>
   
       <div v-if="estudianteEncontrado" class="form-group">
-        <form @submit.prevent="actualizarEstudiante">
+        <form @submit.prevent="actualizar">
           <div class="form-group">
             <label for="nombre">Nombre:</label>
             <input type="text" id="nombre" v-model="nombre" required />
@@ -39,7 +39,7 @@
   </template>
   
   <script>
-    import { obtenerPorCedulaAxiosFachada } from '../clients/clienteEstudiante.js'
+    import { actualizarFachada, actualizarParcialFachada, obtenerPorCedulaAxiosFachada } from '../clients/clienteEstudiante.js'
   export default {
     data() {
       return {
@@ -56,7 +56,21 @@
           console.log(this.cedula);
           const data = await obtenerPorCedulaAxiosFachada(this.cedula);
           console.log(data);
+          console.log(this.cedula);
+          this.estudianteEncontrado = true;
+
+        },
+        async actualizar(){
+          const bodyEstudiante = {
+            nombre:this.nombre,
+            apellido:this.apellido,
+            fechaNacimiento: this.fechaNacimiento,
+            genero: this.genero
+          };
+          const data = await actualizarFachada(this.cedula, bodyEstudiante);
+          console.log(data);
         }
+
     }
   };
   </script>

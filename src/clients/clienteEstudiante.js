@@ -10,7 +10,7 @@ const obtenerPorCedula = async (cedula) =>{
 
 const obtenerPorCedulaAxios = async (cedula) => {
     //axios ya tiene de manera implicita el await por ende es vital colocar async
-    axios.get(`http://localhost:8080/API/v1.0/Matricula/estudiantes/${cedula}`).then(r => r.data); //como atributo
+    const data = axios.get(`http://localhost:8080/API/v1.0/Matricula/estudiantes/${cedula}`).then(r => r.data); //como atributo
     console.log(data);
     return data;
 }
@@ -63,7 +63,7 @@ export const actualizarFachada = async (cedula, body) =>{
 }
 
 export const actualizarParcialFachada = async (cedula, body) =>{
-    return await actualizarFachada(cedula, body);
+    return await actualizarParcial(cedula, body);
 }
 
 export const eliminarFachada = async (cedula) => {

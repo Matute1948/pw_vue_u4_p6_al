@@ -1,15 +1,14 @@
 <template>
   <img alt="Vue logo" src="./assets/logo.png">
-  <PageFormActu/>
+  <router-view/>
 </template>
 
 <script>
-import PageFormActu from './pages/PageFormActu.vue'
 
 export default {
   name: 'App',
   components: {
-    PageFormActu,
+
   }
 }
 </script>

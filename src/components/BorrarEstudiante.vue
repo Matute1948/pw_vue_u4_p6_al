@@ -19,12 +19,15 @@
       };
     },
     methods: {
+      borrarEstudiante(){
+        
+      }
 
     }
   };
   </script>
   
-  <style scoped>
+  <style>
   .form-container {
     max-width: 600px;
     margin: 0 auto;

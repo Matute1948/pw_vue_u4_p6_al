@@ -1,16 +1,17 @@
 <template>
     <div>
       <h1>Borrar Estudiantes</h1>
-      <FormularioBorrarEstudiante />
+      <BorrarEstudiante/>
     </div>
   </template>
   
   <script>
-  import FormularioBorrarEstudiante from '../components/FormularioBorrarEstudiante.vue';
+  import BorrarEstudiante from '../components/BorrarEstudiante.vue';
+
   
   export default {
     components: {
-      FormularioBorrarEstudiante
+      BorrarEstudiante
     }
   };
   </script>
