@@ -9,9 +9,16 @@
   import FormularioActualizarEstudiante from '../components/FormularioActualizarEstudiante.vue';
   
   export default {
+    data(){
+      return{
+        mostrar: false,
+      }
+    },
     components: {
       FormularioActualizarEstudiante,
-    }
+    },
+    
+
   };
   </script>
   

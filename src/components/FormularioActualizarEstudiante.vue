@@ -51,6 +51,15 @@
         estudianteEncontrado: false
       };
     },
+    created(){
+      console.log(this.$route)
+      console.log(this.$route.params.cedula);
+      if(this.$route.params.cedula != 'vacio'){
+        this.cedula = this.$route.params.cedula;
+        this.consultar()
+      }
+    }
+    ,
     methods: {
         async consultar(){
           console.log(this.cedula);

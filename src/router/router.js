@@ -6,6 +6,7 @@ import PagesFormGuar from '../pages/PagesFormGuar.vue'
 import PageFormBorrar from '../pages/PageFormBorrar.vue'
 import PageFormActu from '../pages/PageFormActu.vue'
 import BienvenidosPage from '../pages/BienvenidoPage.vue'
+import NotFoundPage from "../pages/NotFoundPage.vue"
 
 const routes = [
     {
@@ -20,12 +21,16 @@ const routes = [
         component: PageFormBorrar
     },
     {
-        path: "/actualizar",
+        path: "/actualizar/:cedula",
         component: PageFormActu
     },
     {
         path: "/",
         component: BienvenidosPage
+    },
+    {
+        path : "/:pathMatch(.*)*",
+        component : NotFoundPage
     }
 
 ]
